@@ -8,7 +8,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{6B0493EB
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Web", "Sixeyed.MessageQueue.Web\Sixeyed.MessageQueue.Web.csproj", "{32EF2533-A68A-44DE-BDB1-2711EBE1B3B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Integration", "Sixeyed.MessageQueue.Integration\Sixeyed.MessageQueue.Integration.csproj", "{F82AE6D4-FD3F-481A-B3D5-CB3A5EABDC2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Messages", "Sixeyed.MessageQueue.Messages\Sixeyed.MessageQueue.Messages.csproj", "{859F6869-18C2-440E-AE8E-7B4A0602F025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Handler", "Sixeyed.MessageQueue.Handler\Sixeyed.MessageQueue.Handler.csproj", "{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32EF2533-A68A-44DE-BDB1-2711EBE1B3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32EF2533-A68A-44DE-BDB1-2711EBE1B3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32EF2533-A68A-44DE-BDB1-2711EBE1B3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32EF2533-A68A-44DE-BDB1-2711EBE1B3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82AE6D4-FD3F-481A-B3D5-CB3A5EABDC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82AE6D4-FD3F-481A-B3D5-CB3A5EABDC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82AE6D4-FD3F-481A-B3D5-CB3A5EABDC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82AE6D4-FD3F-481A-B3D5-CB3A5EABDC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{859F6869-18C2-440E-AE8E-7B4A0602F025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859F6869-18C2-440E-AE8E-7B4A0602F025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859F6869-18C2-440E-AE8E-7B4A0602F025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859F6869-18C2-440E-AE8E-7B4A0602F025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

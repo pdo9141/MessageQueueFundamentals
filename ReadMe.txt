@@ -47,5 +47,5 @@ Message queue systems use DLQ, not via a message handler. MSMQ if a message time
 	Queue removes bad message
 	Hander 2 retrieves message 2
 
-
+Use transactional queues for durability. Messages must use the transactional API to send and receive items in a transactional queue
 	

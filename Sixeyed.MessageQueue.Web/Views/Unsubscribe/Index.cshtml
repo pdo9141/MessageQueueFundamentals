@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Unsubscribe";
+}
+
+@using (Html.BeginForm("Submit", "Unsubscribe"))
+{
+    <h2>STOP SPAMMING ME</h2>
+    <h3>This is my email address: @Html.TextBox("EmailAddress")</h3>
+    <h3>Stop using it</h3>
+    <input type="submit" value="Submit" />    
+}
+
+ 
+
+    
+
+
