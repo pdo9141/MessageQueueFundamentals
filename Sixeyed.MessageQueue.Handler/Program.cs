@@ -25,9 +25,9 @@ namespace Sixeyed.MessageQueue.Handler
                         var jsonBody = bodyReader.ReadToEnd();
                         var unsubscribeMessage = JsonConvert.DeserializeObject<UnsubscribeCommand>(jsonBody);
                         var workflow = new UnsubscribeWorkflow(unsubscribeMessage.EmailAddress);
-                        Console.WriteLine("Starting unsubscribe for: {0}", unsubscribeMessage.EmailAddress);
+                        Console.WriteLine("Starting unsubscribe for: {0}, at: {1}", unsubscribeMessage.EmailAddress, DateTime.Now.TimeOfDay);
                         workflow.Run();
-                        Console.WriteLine("Unsubscribe complete for: {0}", unsubscribeMessage.EmailAddress);
+                        Console.WriteLine("Unsubscribe complete for: {0}, at: {1}", unsubscribeMessage.EmailAddress, DateTime.Now.TimeOfDay);
                         tx.Commit();
                     }
                 }

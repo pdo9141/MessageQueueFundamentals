@@ -4,7 +4,7 @@ namespace Sixeyed.MessageQueue.Integration.Workflows
 {
     public class UnsubscribeWorkflow
     {
-        private const int StepDuration = 9000;
+        private const int StepDuration = 1000;
 
         public string EmailAddress { get; set; }
 

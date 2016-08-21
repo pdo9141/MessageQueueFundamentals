@@ -16,6 +16,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Messag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Handler", "Sixeyed.MessageQueue.Handler\Sixeyed.MessageQueue.Handler.csproj", "{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BC2978BE-E54E-4570-975A-2C2D3C406C02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Web.Tests", "Sixeyed.MessageQueue.Web.Tests\Sixeyed.MessageQueue.Web.Tests.csproj", "{C94B09CD-3E0B-4DB2-AF81-B656CB4167E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{427229AE-EBF7-45E2-A4C4-F488E064BF01}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +47,16 @@ Global
 		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF38CC99-FDD8-43B3-A13B-54AD73C1273B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94B09CD-3E0B-4DB2-AF81-B656CB4167E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94B09CD-3E0B-4DB2-AF81-B656CB4167E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94B09CD-3E0B-4DB2-AF81-B656CB4167E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94B09CD-3E0B-4DB2-AF81-B656CB4167E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C94B09CD-3E0B-4DB2-AF81-B656CB4167E2} = {BC2978BE-E54E-4570-975A-2C2D3C406C02}
+		{427229AE-EBF7-45E2-A4C4-F488E064BF01} = {BC2978BE-E54E-4570-975A-2C2D3C406C02}
 	EndGlobalSection
 EndGlobal
