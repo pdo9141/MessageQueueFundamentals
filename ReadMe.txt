@@ -48,4 +48,39 @@ Message queue systems use DLQ, not via a message handler. MSMQ if a message time
 	Hander 2 retrieves message 2
 
 Use transactional queues for durability. Messages must use the transactional API to send and receive items in a transactional queue
+
+MSMQ:
+	Installed as a windows service
+	Message queuing built into Windows and Windows Server
+	Works with Active Directory for security & discoverability
+	Core pattern support & advanced features
+	Durability & Reliability, messages not persisted by default, use the recoverable flag to save to disk or create the queue as transactional
+		Recoverable messages saved to disk, as reliable as your disk/RAID/SAN
+		Standard disk storage, not standard back up and restore
+		Clustered MSMQ server instances, for redundancy, resilient to machine failure
+	Store and forward, persist local; forward; persist remote
+	Enable the Journal option in development, useful for auditing, keeps a copy of messages in a seperate journal queue
+	Set privacy level (None, Optional, Body) for encryption options
+	Acknowledgement types
+		Positive - reaches destination or read
+		Negative - failed to send or be read
+	Public Queues:
+		Published in Active Directory
+		Can query AD to find queues
+		Integrates with Windows security
+	Private Queues:
+		Not integrated with AD
+		But still available for public use
+		Security features not available
+		More commonly used, no AD means better performance
+		Can be configured for HTTP support across the internet
+		Can reach it through two paths:
+			PATH: 
+				{machine}\private$\{queueName}
+				.\private$\unsubscribe
+				SC-MQ-01\private$\unsubscribe
+			DIRECT:
+				DIRECT={protocol}:{address}\private$\{queueName}
+				DIRECT=TCP:192.168.2.140\private$\unsubscribe
+				DIRECT=OS:SC-MQ-01\private$\unsubscribe
 	
