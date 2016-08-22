@@ -1,10 +1,13 @@
 ﻿using System.Threading;
+using msmq = System.Messaging;
+using Sixeyed.MessageQueue.Messages.Event;
+using Sixeyed.MessageQueue.Messages.Extensions;
 
 namespace Sixeyed.MessageQueue.Integration.Workflows
 {
     public class UnsubscribeWorkflow
     {
-        private const int StepDuration = 1000;
+        public const int StepDuration = 1000;
 
         public string EmailAddress { get; set; }
 
@@ -16,29 +19,26 @@ namespace Sixeyed.MessageQueue.Integration.Workflows
         public void Run()
         {
             PersistAsUnsubscribed();
-            UnsubscribeInLegacySystem();
-            SetCrmMailingPreference();
-            CancelPendingMailshots();
+            NotifyUserUnsubscribed();
         }
 
         private void PersistAsUnsubscribed()
         {
+            // Fake the funk, persist to DB here
             Thread.Sleep(StepDuration);
         }
 
-        private void UnsubscribeInLegacySystem()
+        private void NotifyUserUnsubscribed()
         {
-            Thread.Sleep(StepDuration);
-        }
-
-        private void SetCrmMailingPreference()
-        {
-            Thread.Sleep(StepDuration);
-        }
-
-        private void CancelPendingMailshots()
-        {
-            Thread.Sleep(StepDuration);
-        }
+            var unsubscribedEvent = new UserUnsubscribed { EmailAddress = EmailAddress };
+            using (var queue = new msmq.MessageQueue("FormatName:MULTICAST=234.1.1.2:8001"))
+            {
+                var message = new msmq.Message();
+                message.BodyStream = unsubscribedEvent.ToJsonStream();
+                message.Label = unsubscribedEvent.GetMessageType();
+                message.Recoverable = true;
+                queue.Send(message);
+            }
+        }                
     }
 }

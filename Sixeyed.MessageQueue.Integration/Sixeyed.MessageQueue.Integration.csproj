@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,7 +43,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\DoesUserExist.cs" />
+    <Compile Include="Workflows\UnsubscribeCrmWorkflow.cs" />
+    <Compile Include="Workflows\UnsubscribeFulfillmentWorkflow.cs" />
+    <Compile Include="Workflows\UnsubscribeLegacyWorkflow.cs" />
     <Compile Include="Workflows\UnsubscribeWorkflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sixeyed.MessageQueue.Messages\Sixeyed.MessageQueue.Messages.csproj">
+      <Project>{859F6869-18C2-440E-AE8E-7B4A0602F025}</Project>
+      <Name>Sixeyed.MessageQueue.Messages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

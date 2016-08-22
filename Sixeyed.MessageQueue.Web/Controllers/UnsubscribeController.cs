@@ -1,10 +1,10 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
+using Sixeyed.MessageQueue.Messages.Queries;
 using Sixeyed.MessageQueue.Messages.Commands;
 using Sixeyed.MessageQueue.Messages.Extensions;
 using Sixeyed.MessageQueue.Integration.Workflows;
 using msmq = System.Messaging;
-using System;
-using Sixeyed.MessageQueue.Messages.Queries;
 
 namespace Sixeyed.MessageQueue.Web.Controllers
 {
@@ -29,6 +29,7 @@ namespace Sixeyed.MessageQueue.Web.Controllers
 
         private bool DoesUserExist(string emailAddress)
         {
+            // Better to create one response queue and leverage correlation IDs and get by correlation ID
             var responseAddress = Guid.NewGuid().ToString().Substring(0, 6);
             responseAddress = ".\\private$\\" + responseAddress;
 

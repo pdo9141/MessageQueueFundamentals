@@ -18,6 +18,7 @@ Publish/Subscribe:
 	publisher sends message
 	queue confirms receipt
 	queue forwards message to subscribers
+	for MSMQ, create regular queue, enter Multicast virtual address, give ANONYMOUS LOGON Receive Message and Peek Message access
 		
 Handling Failures
 Retries:
