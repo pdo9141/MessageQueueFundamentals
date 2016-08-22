@@ -1,9 +1,10 @@
-﻿using System.IO;
-using System.Text;
-using System.Web.Mvc;
-using Newtonsoft.Json;
+﻿using System.Web.Mvc;
 using Sixeyed.MessageQueue.Messages.Commands;
+using Sixeyed.MessageQueue.Messages.Extensions;
+using Sixeyed.MessageQueue.Integration.Workflows;
 using msmq = System.Messaging;
+using System;
+using Sixeyed.MessageQueue.Messages.Queries;
 
 namespace Sixeyed.MessageQueue.Web.Controllers
 {
@@ -17,11 +18,62 @@ namespace Sixeyed.MessageQueue.Web.Controllers
 
         public ActionResult Submit(string emailAddress)
         {
+            if (DoesUserExist(emailAddress))
+            {
+                StartUnsubscribe(emailAddress);
+                return View("Confirmation");
+            }
+
+            return View("Unknown");
+        }
+
+        private bool DoesUserExist(string emailAddress)
+        {
+            var responseAddress = Guid.NewGuid().ToString().Substring(0, 6);
+            responseAddress = ".\\private$\\" + responseAddress;
+
+            try
+            {
+                using (var responseQueue = msmq.MessageQueue.Create(responseAddress))
+                {
+                    var doesUserExistRequest = new DoesUserExistRequest { EmailAddress = emailAddress };
+                    using (var requestQueue = new msmq.MessageQueue(".\\private$\\sixeyed.messagequeue.doesuserexist"))
+                    {
+                        var message = new msmq.Message();
+                        message.BodyStream = doesUserExistRequest.ToJsonStream();
+                        message.Label = doesUserExistRequest.GetMessageType();
+                        message.ResponseQueue = responseQueue;
+                        requestQueue.Send(message);
+                    }
+
+                    var response = responseQueue.Receive();
+                    var responseBody = response.BodyStream.ReadFromJson<DoesUserExistResponse>();
+                    return responseBody.Exists;
+                }
+            }
+            finally
+            {
+                if (msmq.MessageQueue.Exists(responseAddress))
+                    msmq.MessageQueue.Delete(responseAddress);
+            }
+        }
+
+        private void StartUnsubscribe(string emailAddress)
+        {
             var unsubscribeCommand = new UnsubscribeCommand
             {
                 EmailAddress = emailAddress
             };
 
+            using (var queue = new msmq.MessageQueue(".\\private$\\sixeyed.messagequeue.unsubscribe"))
+            {
+                var message = new msmq.Message();
+                message.BodyStream = unsubscribeCommand.ToJsonStream();
+                message.Label = unsubscribeCommand.GetMessageType();
+                queue.Send(message);                
+            }
+
+            /*
             using (var queue = new msmq.MessageQueue(".\\private$\\sixeyed.messagequeue.unsubscribe.tx"))
             {
                 // This uses default MSMQ XML serialization (215 bytes)
@@ -37,7 +89,13 @@ namespace Sixeyed.MessageQueue.Web.Controllers
                 queue.Send(message, tx);
                 tx.Commit();
             }
+            */
+        }
 
+        public ActionResult SubmitSync(string emailAddress)
+        {
+            var workflow = new UnsubscribeWorkflow(emailAddress);
+            workflow.Run();
             return View("Confirmation");
         }
     }

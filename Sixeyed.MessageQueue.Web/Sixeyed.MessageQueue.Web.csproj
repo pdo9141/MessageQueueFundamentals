@@ -198,6 +198,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Unsubscribe\Index.cshtml" />
     <Content Include="Views\Unsubscribe\Confirmation.cshtml" />
+    <Content Include="Views\Unsubscribe\Unknown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
