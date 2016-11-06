@@ -62,6 +62,9 @@ MSMQ:
 	Store and forward, persist local; forward; persist remote
 	Enable the Journal option in development, useful for auditing, keeps a copy of messages in a seperate journal queue
 	Set privacy level (None, Optional, Body) for encryption options
+	Poison Message Handling: in version 4, MSMQ added a retry queue between main and dead-letter queue. Messages that couldn't be processed are moved to the
+		retry queue until specified time period (RetryCycleDelay) where it is then moved back to the main queue to be processed. This process can repeat
+		a number of times (MaxRetryCycles). Different strategies include: discard, return to front (default), return to back, move to other queue, shuttle between queues
 	Acknowledgement types
 		Positive - reaches destination or read
 		Negative - failed to send or be read
