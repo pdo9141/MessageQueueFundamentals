@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Messaging;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 namespace DemoConsole
@@ -11,6 +11,7 @@ namespace DemoConsole
         {
             try
             {
+                SendMessageToMsmq();
                 //CreateQueues();
                 //SendDefaultMessages();
                 //SendDurableMessages();
@@ -25,6 +26,13 @@ namespace DemoConsole
             }
 
             Console.Read();
+        }
+
+        private static void SendMessageToMsmq()
+        {
+            MessageQueue queue = new MessageQueue(@".\private$\msmqservice/msmqservice.svc");
+            queue.Send("Hello MSMQ");
+            Console.WriteLine("Message Sent");
         }
 
         private static void PurgeMessagesOnAllQueues()

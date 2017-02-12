@@ -5,6 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{6B0493EB-7C85-4407-AEA6-44C8E4FA5991}"
 	ProjectSection(SolutionItems) = preProject
+		IisWasWcfMsmq.txt = IisWasWcfMsmq.txt
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
@@ -38,6 +39,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Handler.UnsubscribeCrm", "Sixeyed.MessageQueue.Handler.UnsubscribeCrm\Sixeyed.MessageQueue.Handler.UnsubscribeCrm.csproj", "{CBEF5621-474A-4BA4-B554-C208BA6B93D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sixeyed.MessageQueue.Handler.UnsubscribeFulfill", "Sixeyed.MessageQueue.Handler.UnsubscribeFulfill\Sixeyed.MessageQueue.Handler.UnsubscribeFulfill.csproj", "{A3E0E189-93DC-4820-AA54-E75728B14FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqContract", "MsmqContract\MsmqContract.csproj", "{06C8BA4D-4858-467F-BD56-45A4E5D1C3A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqService", "MsmqService\MsmqService.csproj", "{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +86,14 @@ Global
 		{A3E0E189-93DC-4820-AA54-E75728B14FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3E0E189-93DC-4820-AA54-E75728B14FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3E0E189-93DC-4820-AA54-E75728B14FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C8BA4D-4858-467F-BD56-45A4E5D1C3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C8BA4D-4858-467F-BD56-45A4E5D1C3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C8BA4D-4858-467F-BD56-45A4E5D1C3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C8BA4D-4858-467F-BD56-45A4E5D1C3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,31 @@
+https://msdn.microsoft.com/en-us/library/ee358764(v=vs.110).aspx
+https://msdn.microsoft.com/en-us/library/bb332338.aspx
+https://channel9.msdn.com/shows/Endpoint/endpointtv-Screencast-Configuring-WAS-for-TCP-Endpoints/
+https://blogs.msdn.microsoft.com/tomholl/2008/07/12/msmq-wcf-and-iis-getting-them-to-play-nice-part-1/
+https://blogs.msdn.microsoft.com/tomholl/2008/07/13/msmq-wcf-and-iis-getting-them-to-play-nice-part-2/
+https://msdn.microsoft.com/en-us/library/ee677285(v=azure.10).aspx
+http://serverfault.com/questions/403040/how-to-configure-wcf-service-to-autostart-in-appfabric-when-the-services-reside
+https://www.microsoft.com/en-us/download/confirmation.aspx?id=27115 (Microsoft AppFabric 1.1)
+https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-application-initialization
+https://technet.microsoft.com/en-us/library/cc735179%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396
+http://stackoverflow.com/questions/17952650/wcf-msmq-hosted-in-iis7-was-not-retrieving-messages-automatically-until-i-manual
+To Enable IIS/WAS/WCF/MSMQ
+	// C:\Windows\Microsoft.NET\Framework\v4.0.30319>aspnet_regiis -ga "IIS APPPOOL\WcfAppPool"
+	// Grant application web.config file permission to IIS_IUSRS (IIS Pool Identity)
+	// Grant message queue permission to IIS_IUSRS (not sure if this is neccessary)
+	Run application pool under admin account (pdo9141@gmail.com)
+	Ensure all Windows Process Activation Service options are configured in Windows Features (.NET Environment, Process Model, etc.)
+	Ensure all MSMQ options are configured in Windows Features (AD, HTTP Support, Triggers, Multicast)
+	Ensure .NET Framework 3.5 options are configured in Windows Features (WCF HTTP Activation, WCF Non-HTTP Activation)	
+	Open command prompt as admin and cd to C:\Windows\System32\inetsrv\config notepad applicationHost.config (view sites node, see if bindings exists)
+	If not, command prompt into C:\Windows\System32\inetsrv\ and type the following command to enable your site:
+		// appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*'] (optional if not there in config)
+		// appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.pipe',bindingInformation='*'] (optional if not there in config)
+		// appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.msmq',bindingInformation='localhost'] (optional if not there in config)
+		appcmd.exe set app "Default Web Site/AcmeWeb" /enabledProtocols:http,net.pipe,net.tcp,net.msmq
+	Install Microsoft AppFabric 1.1
+		set application pool start mode to AlwaysRunning in advanced settings
+		select application and click manage wcf and wf services, enable Auto-Start from there
+
+
+		
