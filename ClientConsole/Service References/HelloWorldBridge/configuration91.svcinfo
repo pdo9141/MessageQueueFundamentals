@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="0v3/KJf5odg9cIDpQbJAxrU4u6Y=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ZImkqisCEQUrHngqEDEH+BMp64s=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IHelloWorld">
       <properties>
@@ -354,10 +354,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IHelloWorld" contract="HelloWorldBridge.IHelloWorld" bindingType="basicHttpBinding" address="http://localhost/MsmqService/HelloWorld.svc" bindingConfiguration="BasicHttpBinding_IHelloWorld">
+    <endpoint name="BasicHttpBinding_IHelloWorld" contract="HelloWorldBridge.IHelloWorld" bindingType="basicHttpBinding" address="http://waytooawesome/MsmqService/HelloWorld.svc" bindingConfiguration="BasicHttpBinding_IHelloWorld">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/MsmqService/HelloWorld.svc</serializedValue>
+          <serializedValue>http://waytooawesome/MsmqService/HelloWorld.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -439,10 +439,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IHelloWorld" contract="HelloWorldBridge.IHelloWorld" bindingType="wsHttpBinding" address="http://localhost/MsmqService/HelloWorld.svc/secure" bindingConfiguration="WSHttpBinding_IHelloWorld">
+    <endpoint name="WSHttpBinding_IHelloWorld" contract="HelloWorldBridge.IHelloWorld" bindingType="wsHttpBinding" address="http://waytooawesome/MsmqService/HelloWorld.svc/secure" bindingConfiguration="WSHttpBinding_IHelloWorld">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/MsmqService/HelloWorld.svc/secure</serializedValue>
+          <serializedValue>http://waytooawesome/MsmqService/HelloWorld.svc/secure</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

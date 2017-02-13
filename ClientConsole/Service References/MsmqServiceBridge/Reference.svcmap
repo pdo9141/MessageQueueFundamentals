@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3a18e3f-cecc-4866-8427-24164851696a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fe5ee265-2bbe-4c46-9d3d-affde272d941" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/MsmqService/HelloWorld.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/MsmqService/MsmqService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HelloWorld2.xsd" MetadataType="Schema" ID="db78a86d-57b4-4128-a2e5-b8268292a4f2" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?xsd=xsd0" />
-    <MetadataFile FileName="HelloWorld1.wsdl" MetadataType="Wsdl" ID="43d65c2e-a3b1-478a-af2b-fcc6b4726d4b" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?wsdl" />
-    <MetadataFile FileName="HelloWorld21.xsd" MetadataType="Schema" ID="6747c121-675e-42b5-a660-f3165db9a66f" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?xsd=xsd1" />
-    <MetadataFile FileName="HelloWorld1.disco" MetadataType="Disco" ID="a1ebf152-9f6d-4dac-ad5f-45d0d338c2a8" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?disco" />
+    <MetadataFile FileName="MsmqService.xsd" MetadataType="Schema" ID="aad754f4-cc64-4835-8710-d1647444f4a3" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MsmqService1.xsd" MetadataType="Schema" ID="6ec273a3-2e00-4ce1-941e-900789948eb2" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MsmqService.disco" MetadataType="Disco" ID="a1f4cdc4-327f-4a0f-9ceb-c600f35666cf" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?disco" />
+    <MetadataFile FileName="MsmqService.wsdl" MetadataType="Wsdl" ID="912bc53a-6c0f-45a0-890d-0092ac16e039" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

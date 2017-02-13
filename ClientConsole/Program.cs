@@ -10,6 +10,11 @@ namespace ClientConsole
     {
         static void Main(string[] args)
         {
+            using (var client = new MsmqServiceBridge.MsmqContractClient())
+            {
+                client.ProcessMessage(9);
+            }
+            
             using (var client = new HelloWorldBridge.HelloWorldClient("BasicHttpBinding_IHelloWorld"))
             {
                 client.DoWork("BasicHttpBinding");

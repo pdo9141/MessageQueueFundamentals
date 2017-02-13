@@ -14,7 +14,7 @@ namespace MsmqService
     {
         public void DoWork(string message)
         {
-            var sSource = "MsmqService";
+            var sSource = "HelloWorldService";
             var sLog = "Application";
             var sEvent = String.Format("ProcessMessage Message: {0}", message);
 

@@ -52,14 +52,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\MsmqServiceBridge\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\HelloWorldBridge\HelloWorld.wsdl" />
-    <None Include="Service References\HelloWorldBridge\HelloWorld.xsd">
+    <None Include="Service References\MsmqServiceBridge\MsmqService.wsdl" />
+    <None Include="Service References\MsmqServiceBridge\MsmqService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HelloWorldBridge\HelloWorld1.xsd">
+    <None Include="Service References\MsmqServiceBridge\MsmqService1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -68,9 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\HelloWorldBridge\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HelloWorldBridge\HelloWorld.disco" />
+    <WCFMetadataStorage Include="Service References\MsmqServiceBridge\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\HelloWorldBridge\configuration91.svcinfo" />
@@ -79,7 +82,32 @@
     <None Include="Service References\HelloWorldBridge\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\HelloWorldBridge\HelloWorld1.wsdl" />
+    <None Include="Service References\HelloWorldBridge\HelloWorld2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HelloWorldBridge\HelloWorld21.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\HelloWorldBridge\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelloWorldBridge\HelloWorld1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsmqServiceBridge\MsmqService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsmqServiceBridge\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsmqServiceBridge\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsmqServiceBridge\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

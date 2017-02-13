@@ -36,11 +36,11 @@ namespace DemoConsole
             if (!EventLog.SourceExists(sSource))
                 EventLog.CreateEventSource(sSource, sLog);
 
-            MessageQueue queue = new MessageQueue(@".\private$\msmqservice/msmqservice.svc");
+            MessageQueue queue = new MessageQueue(@".\private$\msmqservice/msmqintegrationservice.svc");
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 1; i++)
             {
-                queue.Send("Message: " + i);
+                queue.Send(i);
                 EventLog.WriteEntry(sSource, String.Format("Created MSMQ message: {0}", i));
             }
 
