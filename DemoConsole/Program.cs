@@ -38,7 +38,7 @@ namespace DemoConsole
 
             MessageQueue queue = new MessageQueue(@".\private$\msmqservice/msmqintegrationservice.svc");
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 9; i++)
             {
                 queue.Send(i);
                 EventLog.WriteEntry(sSource, String.Format("Created MSMQ message: {0}", i));
