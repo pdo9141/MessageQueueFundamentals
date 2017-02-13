@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqContract", "MsmqContrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqService", "MsmqService\MsmqService.csproj", "{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsole", "ClientConsole\ClientConsole.csproj", "{D4541676-EC10-4C0C-A0B4-65FA12FA6264}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BAFD467-1AC5-4065-B08D-83AD76CAD0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

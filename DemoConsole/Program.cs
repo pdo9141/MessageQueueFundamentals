@@ -30,9 +30,21 @@ namespace DemoConsole
 
         private static void SendMessageToMsmq()
         {
+            var sSource = "DemoConsole";
+            var sLog = "Application";
+            
+            if (!EventLog.SourceExists(sSource))
+                EventLog.CreateEventSource(sSource, sLog);
+
             MessageQueue queue = new MessageQueue(@".\private$\msmqservice/msmqservice.svc");
-            queue.Send("Hello MSMQ");
-            Console.WriteLine("Message Sent");
+
+            for (int i = 0; i < 9; i++)
+            {
+                queue.Send("Message: " + i);
+                EventLog.WriteEntry(sSource, String.Format("Created MSMQ message: {0}", i));
+            }
+
+            Console.WriteLine("Messages Sent");
         }
 
         private static void PurgeMessagesOnAllQueues()

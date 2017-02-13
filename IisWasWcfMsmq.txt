@@ -26,6 +26,7 @@ To Enable IIS/WAS/WCF/MSMQ
 	Install Microsoft AppFabric 1.1
 		set application pool start mode to AlwaysRunning in advanced settings
 		select application and click manage wcf and wf services, enable Auto-Start from there
+	In IIS, go to Features View of application, Anonymous Authentication > right click edit > update specific user to pdo9141@gmail.com
 
 
 		

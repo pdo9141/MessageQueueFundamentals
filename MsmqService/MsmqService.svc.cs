@@ -1,20 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
+using System.Threading;
 using System.ServiceModel;
-using System.Text;
+using System.Diagnostics;
+using System.ServiceModel.MsmqIntegration;
 using MsmqContract;
 
 namespace MsmqService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "MsmqService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select MsmqService.svc or MsmqService.svc.cs at the Solution Explorer and start debugging.
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.PerCall)]
     public class MsmqService : IMsmqContract
     {
-        public void ProcessMessage(string message)
+        public void ProcessMessage(MsmqMessage<string> message)
         {
-            //throw new NotImplementedException();
+            var sSource = "MsmqService";
+            var sLog = "Application";
+            var sEvent = String.Format("ProcessMessage Event: {0}", message.Body);
+
+            if (!EventLog.SourceExists(sSource))
+                EventLog.CreateEventSource(sSource, sLog);
+
+            EventLog.WriteEntry(sSource, sEvent);
+
+            Thread.Sleep(45000);
         }
     }
 }
