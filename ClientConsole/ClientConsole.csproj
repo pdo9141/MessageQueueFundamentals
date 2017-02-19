@@ -60,13 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\MsmqServiceBridge\MsmqService.wsdl" />
-    <None Include="Service References\MsmqServiceBridge\MsmqService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MsmqServiceBridge\MsmqService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -82,11 +75,11 @@
     <None Include="Service References\HelloWorldBridge\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\HelloWorldBridge\HelloWorld1.wsdl" />
-    <None Include="Service References\HelloWorldBridge\HelloWorld2.xsd">
+    <None Include="Service References\HelloWorldBridge\HelloWorld.wsdl" />
+    <None Include="Service References\HelloWorldBridge\HelloWorld.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HelloWorldBridge\HelloWorld21.xsd">
+    <None Include="Service References\HelloWorldBridge\HelloWorld1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HelloWorldBridge\Reference.svcmap">
@@ -95,22 +88,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\HelloWorldBridge\HelloWorld1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MsmqServiceBridge\MsmqService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\MsmqServiceBridge\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MsmqServiceBridge\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\MsmqServiceBridge\MsmqService1.wsdl" />
+    <None Include="Service References\MsmqServiceBridge\MsmqService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MsmqServiceBridge\MsmqService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MsmqServiceBridge\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MsmqServiceBridge\MsmqService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelloWorldBridge\HelloWorld.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

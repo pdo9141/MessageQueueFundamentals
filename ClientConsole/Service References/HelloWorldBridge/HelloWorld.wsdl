@@ -163,10 +163,39 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IHelloWorld_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://waytooawesome/MsmqService/HelloWorld.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://waytooawesome/MsmqService/HelloWorld.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/MsmqService/HelloWorld.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/MsmqService/HelloWorld.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IHelloWorld_DoWork_InputMessage">
@@ -221,25 +250,47 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetNamedPipeBinding_IHelloWorld" type="tns:IHelloWorld">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IHelloWorld_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="DoWork">
+      <soap12:operation soapAction="http://tempuri.org/IHelloWorld/DoWork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="HelloWorld">
     <wsdl:port name="BasicHttpBinding_IHelloWorld" binding="tns:BasicHttpBinding_IHelloWorld">
-      <soap:address location="http://waytooawesome/MsmqService/HelloWorld.svc" />
+      <soap:address location="http://localhost/MsmqService/HelloWorld.svc" />
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IHelloWorld" binding="tns:WSHttpBinding_IHelloWorld">
-      <soap12:address location="http://waytooawesome/MsmqService/HelloWorld.svc/secure" />
+      <soap12:address location="http://localhost/MsmqService/HelloWorld.svc/secure" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://waytooawesome/MsmqService/HelloWorld.svc/secure</wsa10:Address>
+        <wsa10:Address>http://localhost/MsmqService/HelloWorld.svc/secure</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>WAYTOOAWESOME\Phillip</Upn>
+          <Upn>WAYTOOGONZO\Phillip</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IHelloWorld" binding="tns:NetTcpBinding_IHelloWorld">
-      <soap12:address location="net.tcp://waytooawesome/MsmqService/HelloWorld.svc" />
+      <soap12:address location="net.tcp://waytoogonzo/MsmqService/HelloWorld.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://waytooawesome/MsmqService/HelloWorld.svc</wsa10:Address>
+        <wsa10:Address>net.tcp://waytoogonzo/MsmqService/HelloWorld.svc</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>WAYTOOAWESOME\Phillip</Upn>
+          <Upn>WAYTOOGONZO\Phillip</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetNamedPipeBinding_IHelloWorld" binding="tns:NetNamedPipeBinding_IHelloWorld">
+      <soap12:address location="net.pipe://waytoogonzo/MsmqService/HelloWorld.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://waytoogonzo/MsmqService/HelloWorld.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>WAYTOOGONZO\Phillip</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

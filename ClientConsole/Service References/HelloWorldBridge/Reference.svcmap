@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost/MsmqService/HelloWorld.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HelloWorld2.xsd" MetadataType="Schema" ID="db78a86d-57b4-4128-a2e5-b8268292a4f2" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?xsd=xsd0" />
-    <MetadataFile FileName="HelloWorld1.wsdl" MetadataType="Wsdl" ID="43d65c2e-a3b1-478a-af2b-fcc6b4726d4b" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?wsdl" />
-    <MetadataFile FileName="HelloWorld21.xsd" MetadataType="Schema" ID="6747c121-675e-42b5-a660-f3165db9a66f" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?xsd=xsd1" />
-    <MetadataFile FileName="HelloWorld1.disco" MetadataType="Disco" ID="a1ebf152-9f6d-4dac-ad5f-45d0d338c2a8" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/HelloWorld.svc?disco" />
+    <MetadataFile FileName="HelloWorld.xsd" MetadataType="Schema" ID="cc49c73c-465b-46d9-aea2-04b2f6ffd10d" SourceId="1" SourceUrl="http://localhost/MsmqService/HelloWorld.svc?xsd=xsd1" />
+    <MetadataFile FileName="HelloWorld1.xsd" MetadataType="Schema" ID="81725243-032c-440e-9afc-9eceaf06a735" SourceId="1" SourceUrl="http://localhost/MsmqService/HelloWorld.svc?xsd=xsd0" />
+    <MetadataFile FileName="HelloWorld.wsdl" MetadataType="Wsdl" ID="44c0d84a-6930-4dc7-8986-46dec7310482" SourceId="1" SourceUrl="http://localhost/MsmqService/HelloWorld.svc?wsdl" />
+    <MetadataFile FileName="HelloWorld.disco" MetadataType="Disco" ID="ef875d34-faeb-4ea8-9ffd-c271299ca11f" SourceId="1" SourceUrl="http://localhost/MsmqService/HelloWorld.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

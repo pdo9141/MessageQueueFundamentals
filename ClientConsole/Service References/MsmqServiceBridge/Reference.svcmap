@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost/MsmqService/MsmqService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MsmqService.xsd" MetadataType="Schema" ID="aad754f4-cc64-4835-8710-d1647444f4a3" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?xsd=xsd1" />
-    <MetadataFile FileName="MsmqService1.xsd" MetadataType="Schema" ID="6ec273a3-2e00-4ce1-941e-900789948eb2" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?xsd=xsd0" />
-    <MetadataFile FileName="MsmqService.disco" MetadataType="Disco" ID="a1f4cdc4-327f-4a0f-9ceb-c600f35666cf" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?disco" />
-    <MetadataFile FileName="MsmqService.wsdl" MetadataType="Wsdl" ID="912bc53a-6c0f-45a0-890d-0092ac16e039" SourceId="1" SourceUrl="http://waytooawesome/MsmqService/MsmqService.svc?wsdl" />
+    <MetadataFile FileName="MsmqService1.wsdl" MetadataType="Wsdl" ID="03890618-bbe9-4117-b01b-9bcaa744f60f" SourceId="1" SourceUrl="http://localhost/MsmqService/MsmqService.svc?wsdl" />
+    <MetadataFile FileName="MsmqService1.disco" MetadataType="Disco" ID="eaed5874-5d69-4993-974b-7958b1465b9b" SourceId="1" SourceUrl="http://localhost/MsmqService/MsmqService.svc?disco" />
+    <MetadataFile FileName="MsmqService2.xsd" MetadataType="Schema" ID="ad724c94-6d78-463b-b28c-c533d71216cf" SourceId="1" SourceUrl="http://localhost/MsmqService/MsmqService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MsmqService21.xsd" MetadataType="Schema" ID="a849d30e-7518-4456-86ae-5012bf5332f0" SourceId="1" SourceUrl="http://localhost/MsmqService/MsmqService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

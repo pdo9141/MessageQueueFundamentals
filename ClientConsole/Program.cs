@@ -29,6 +29,11 @@ namespace ClientConsole
             {
                 client.DoWork("NetTcpBinding");
             }
+
+            using (var client = new HelloWorldBridge.HelloWorldClient("NetNamedPipeBinding_IHelloWorld"))
+            {
+                client.DoWork("NetNamedPipeBinding");
+            }
         }
     }
 }
