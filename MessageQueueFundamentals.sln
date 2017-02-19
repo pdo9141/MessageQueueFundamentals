@@ -46,6 +46,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqService", "MsmqService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsole", "ClientConsole\ClientConsole.csproj", "{D4541676-EC10-4C0C-A0B4-65FA12FA6264}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonDeadLetterTestHost", "PoisonDeadLetterTestHost\PoisonDeadLetterTestHost.csproj", "{179381F1-DF3F-4EE9-9CE3-33306DA13C36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoisonDeadLetterTestClient", "PoisonDeadLetterTestClient\PoisonDeadLetterTestClient.csproj", "{9A55ECDA-4827-424B-8938-5AF666DE42F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,14 @@ Global
 		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4541676-EC10-4C0C-A0B4-65FA12FA6264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{179381F1-DF3F-4EE9-9CE3-33306DA13C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{179381F1-DF3F-4EE9-9CE3-33306DA13C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{179381F1-DF3F-4EE9-9CE3-33306DA13C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{179381F1-DF3F-4EE9-9CE3-33306DA13C36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A55ECDA-4827-424B-8938-5AF666DE42F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A55ECDA-4827-424B-8938-5AF666DE42F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A55ECDA-4827-424B-8938-5AF666DE42F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A55ECDA-4827-424B-8938-5AF666DE42F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
