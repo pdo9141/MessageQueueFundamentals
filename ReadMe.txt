@@ -1,3 +1,6 @@
+http://www.michaelfcollins3.me/blog/2012/09/20/wcf-msmq-bad-message-handling.html
+http://www.cogin.com/articles/SurvivingPoisonMessages.php
+
 Messaging Patterns
 Fire and Forget: 
 	client sends message 

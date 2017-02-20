@@ -26,17 +26,12 @@ namespace PoisonDeadLetterTestClient
                 
                 var remoteAddress = new EndpointAddress("net.msmq://localhost/private/hello");
 
-                channelFactory = new ChannelFactory<ISayHelloService>(
-                    netMsmqBinding,
-                    remoteAddress);
-
+                channelFactory = new ChannelFactory<ISayHelloService>(netMsmqBinding, remoteAddress);
                 channelFactory.Open();
 
                 // Start dead letter queue listener
                 var baseAddress = new Uri("net.msmq://localhost/private");
-                deadLetterServiceHost = new ServiceHost(
-                    typeof(SayHelloDeadLetterService),
-                    baseAddress);
+                deadLetterServiceHost = new ServiceHost(typeof(SayHelloDeadLetterService), baseAddress);
 
                 netMsmqBinding = new NetMsmqBinding(NetMsmqSecurityMode.None);
                 deadLetterServiceHost.AddServiceEndpoint(
